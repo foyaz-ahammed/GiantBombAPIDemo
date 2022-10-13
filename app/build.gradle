@@ -1,0 +1,82 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.rocket.assessment"
+        minSdk 29
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        buildTypes.each {
+            it.buildConfigField "String", "API_KEY", api_key
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation "androidx.core:core-ktx:$versions.androidx_core"
+    implementation "androidx.appcompat:appcompat:$versions.androidx_appcompat"
+    implementation "com.google.android.material:material:$versions.google_material"
+    implementation "androidx.constraintlayout:constraintlayout:${versions.androidx_constraintlayout}"
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:${versions.androidx_navigation}"
+    implementation "androidx.navigation:navigation-ui-ktx:${versions.androidx_navigation}"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+    implementation "com.squareup.retrofit2:converter-moshi:$versions.retrofit"
+
+    // OkHttp
+    implementation "com.squareup.okhttp3:logging-interceptor:$versions.ok_http"
+
+    // Moshi
+    implementation "com.squareup.moshi:moshi:$versions.moshi"
+    implementation "com.squareup.moshi:moshi-kotlin:$versions.moshi"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$versions.moshi"
+
+    // Koin
+    implementation "io.insert-koin:koin-core:$versions.koin"
+    implementation "io.insert-koin:koin-android:$versions.koin"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$versions.glide"
+    annotationProcessor "com.github.bumptech.glide:compiler:$versions.glide"
+
+    // Shimmer
+    implementation "com.facebook.shimmer:shimmer:${versions.shimmer}"
+
+    testImplementation "junit:junit:${versions.test_junit}"
+    androidTestImplementation "androidx.test.ext:junit:${versions.test_ext}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${versions.test_espresso}"
+}

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Giant Bomb</string>
+    <string name="search">Search</string>
+    <string name="label_name">Name:</string>
+    <string name="label_date_added">Date added:</string>
+    <string name="label_date_last_updated">Date last updated:</string>
+    <string name="no_description">No description</string>
+    <string name="error_message">Error getting data. Please check your network connection and retry</string>
+    <string name="retry">Retry</string>
+</resources>
