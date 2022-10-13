@@ -1,4 +1,4 @@
-# GiantBombAPIDemo
+# Giant Bomb API Demo
 ## Screen1
 #### Search game result and show them on recyclerview
 ### Loading
