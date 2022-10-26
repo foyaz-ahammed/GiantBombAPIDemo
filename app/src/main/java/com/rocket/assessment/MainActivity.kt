@@ -21,8 +21,6 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment)
         val appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
-
-        BuildConfig.BUILD_TYPE
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

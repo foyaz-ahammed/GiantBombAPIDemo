@@ -32,7 +32,7 @@ class Response {
         @Json(name = "image_tags") val imageTags: List<ImageTagInfo>,
         @Json(name = "name") val name: String,
         @Json(name = "number_of_user_reviews") val numberOfUserReviews: Int,
-        @Json(name = "platforms") val platforms: List<PlatformInfo>,
+        @Json(name = "platforms") val platforms: List<PlatformInfo>?,
         @Json(name = "site_detail_url") val siteDetailUrl: String
     ): Parcelable
 
